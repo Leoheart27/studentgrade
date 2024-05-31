@@ -4,12 +4,12 @@ type Props = {
     students : Student[]
 }
 
-export const StudentTable = ({students}: Props) => {
+export const StudentTable = ({students}: Props): JSX.Element => {
 
-    const avatar = (student: Student) => <img className="w-10 rounded-full" src={student.avatar} alt={student.name} />
-    const active = <p className="bg-green-900 max-w-fit p-1 rounded-md border-solid border-2 border-black">Active</p>
-    const inactive = <p className="bg-red-900 max-w-fit p-1 rounded-md border-solid border-2 border-black">Inactive</p>
-    const finalGrade = (student: Student) => (student.grade1 + student.grade2).toFixed(0)
+    const avatar = (student: Student): JSX.Element => <img className="w-10 rounded-full" src={student.avatar} alt={student.name} />
+    const active: JSX.Element = <p className="bg-green-900 max-w-fit p-1 rounded-md border-solid border-2 border-black">Active</p>
+    const inactive: JSX.Element = <p className="bg-red-900 max-w-fit p-1 rounded-md border-solid border-2 border-black">Inactive</p>
+    const finalGrade = (student: Student): string => (student.grade1 + student.grade2).toFixed(0)
 
     return (
         <table className="max-h-28 w-full text-left m-4">
